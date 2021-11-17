@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:interview_test/dimens.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:interview_test/screens/widgets/button_lage.dart';
 import 'package:interview_test/screens/widgets/info_widget.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+
 
 class SplashScreen extends StatelessWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -40,9 +41,10 @@ class SplashScreen extends StatelessWidget {
             child: InkWell(
               onTap: (){
               print("Login");
+              Navigator.pushNamed(context, '/login_screen');
               },
               child: ButtonLage(
-                  title: "Login", colorText: Colors.black, color: Colors.white),
+                  title:AppLocalizations.of(context)!.login , colorText: Colors.black, color: Colors.white),
             ),
           ),
           Positioned(
@@ -50,9 +52,10 @@ class SplashScreen extends StatelessWidget {
             child: InkWell(
               onTap: (){
                 print("register");
+                Navigator.pushNamed(context, '/register_screen');
               },
               child: ButtonLage(
-                  title: "register", colorText: Colors.white, color: Colors.black),
+                  title: AppLocalizations.of(context)!.register, colorText: Colors.white, color: Colors.black),
             ),
           )
 
